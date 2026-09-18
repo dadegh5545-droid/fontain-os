@@ -1,0 +1,15 @@
+# CODEOWNERS — placeholders. Update handles when Dev A / Dev B join.
+# Folder ownership (see AGENTS.md): Dev A owns amplify/, scripts/, shared/. Dev B owns app/, src/.
+
+# Backend (Dev A)
+/amplify/   @dadegh5545-droid
+/scripts/   @dadegh5545-droid
+/shared/    @dadegh5545-droid
+
+# Frontend (Dev B)
+/app/       @dadegh5545-droid
+/src/       @dadegh5545-droid
+
+# Specs and agent rules (one person per PR)
+/docs/      @dadegh5545-droid
+/AGENTS.md  @dadegh5545-droid
