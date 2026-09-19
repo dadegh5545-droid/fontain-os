@@ -5,7 +5,8 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  globalIgnores([".next/**", "out/**", "build/**", "coverage/**", "next-env.d.ts"]),
+  // `.amplify/**` = مخرجات CDK المولَّدة من `ampx sandbox` (مُتجاهلة في git وprettier أيضًا).
+  globalIgnores([".next/**", "out/**", "build/**", "coverage/**", "next-env.d.ts", ".amplify/**"]),
 ]);
 
 export default eslintConfig;
