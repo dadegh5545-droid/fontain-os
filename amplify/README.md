@@ -40,3 +40,10 @@
   تُضمّن داخلها `plugin-types@1.12.1` التي تتطلب هذا الإصدار تحديدًا، وبدونه يرفض `npm ci` مزامنة الـlockfile.
   تُزال عند إصلاح الحزمة upstream.
 - جدول `OtpChallenges` بسعة `PROVISIONED` 1/1 ليبقى داخل الطبقة المجانية لـDynamoDB؛ تُراجع في FOS-010.
+- **تحديث `package-lock.json` يكون بـ`npm install --package-lock-only` على npm 10 فقط** (npm المضمّن في
+  Node 20، وهو ما يستخدمه CI). السبب: `@aws-amplify/data-construct` و`@aws-amplify/graphql-api-construct`
+  تُضمّنان (`inBundle`) نسخًا من `@opentelemetry/resources@2.0.0` و`sdk-trace-base@2.0.0` تتطلب
+  `@opentelemetry/core@2.0.0` بالضبط. أي إعادة حل كاملة للشجرة (`npm install` عادي، أو حذف الملف
+  وتوليده من جديد، بأي من npm 10 أو 11) تُسقط المدخلات المتداخلة العميقة لهذه النسخة، فيرفض
+  `npm ci` الملف بـ`Missing: @opentelemetry/core@2.0.0 from lock file`. أما `--package-lock-only`
+  فيُحدّث الملف تحديثًا تدريجيًا ويُبقي تلك المدخلات. تحقّق دائمًا بـ`npx npm@10.8.2 ci` قبل الدفع.
