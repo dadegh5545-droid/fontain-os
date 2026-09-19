@@ -1,0 +1,44 @@
+import type { MessageTree } from "./messages";
+
+/**
+ * الرسائل العربية — مُطبَّعة على شكل `en.ts`: أي مفتاح ناقص أو زائد يفشل في `typecheck`.
+ */
+export const ar: MessageTree = {
+  common: {
+    appName: "Fontain OS",
+    tagline: "نظام التشغيل الداخلي لـFontain Digital Solutions",
+    loading: "جارٍ التحميل…",
+    save: "حفظ",
+    cancel: "إلغاء",
+    close: "إغلاق",
+    back: "رجوع",
+    search: "بحث",
+    notFound: "الصفحة غير موجودة",
+  },
+  language: {
+    label: "اللغة",
+    switchTo: "التبديل إلى {language}",
+  },
+  nav: {
+    inbox: "صندوق القرارات",
+    leads: "العملاء المحتملون",
+    clients: "العملاء",
+    myTasks: "مهامي",
+    finance: "المالية",
+    settings: "الإعدادات",
+  },
+  auth: {
+    login: "تسجيل الدخول",
+    logout: "تسجيل الخروج",
+    phone: "رقم الهاتف",
+    otp: "رمز التحقق",
+    sendCode: "إرسال الرمز",
+    verify: "تحقق",
+  },
+  portal: {
+    title: "بوابة العميل",
+    myProject: "مشروعي",
+    approvals: "الاعتمادات",
+    filesAndInvoices: "الملفات والفواتير",
+  },
+};

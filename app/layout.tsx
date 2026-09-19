@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { dirOf } from "@/i18n/config";
+import { LocaleProvider } from "@/i18n/provider";
+import { getLocale } from "@/i18n/server";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,10 +10,13 @@ export const metadata: Metadata = {
   description: "Fontain OS — internal operating system for Fontain Digital Solutions",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const locale = await getLocale();
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="flex min-h-full flex-col">{children}</body>
+    <html lang={locale} dir={dirOf(locale)} className="h-full antialiased">
+      <body className="flex min-h-full flex-col">
+        <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
+      </body>
     </html>
   );
 }
