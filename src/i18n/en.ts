@@ -41,4 +41,27 @@ export const en = {
     approvals: "Approvals",
     filesAndInvoices: "Files & invoices",
   },
+  home: {
+    login: "Sign in",
+    enterApp: "Team workspace",
+    enterPortal: "Client portal",
+  },
+  shell: {
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    teamArea: "Team",
+    placeholderTitle: "Placeholder",
+    placeholderBody:
+      "This screen is built in a later sprint. The shell, navigation and RTL/LTR layout are in place.",
+  },
+  pages: {
+    inbox: "Everything that needs a human decision appears here.",
+    leads: "Leads board: New, Contacted, Qualified, Proposal sent.",
+    clients: "Every client and their workspace.",
+    tasks: "Tasks assigned to you and awaiting review.",
+    finance: "Invoices, payments, expenses and renewals.",
+    settings: "Organization, services, playbooks, team and AI.",
+    login: "Enter your phone number to receive a verification code.",
+    portal: "Your project, approvals, files and invoices.",
+  },
 } as const;
